@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.*;
@@ -23,7 +24,7 @@ public class RobotContainer {
 
   private final Joystick controller1 = new Joystick(0);
 
-  private final JoystickButton runMotorButtonLeft = new JoystickButton(controller1, 5); //TODO: Change the 0 here to the button ID desired. Use DriverStation to find a button you would like
+  private final JoystickButton runMotorButtonLeft = new JoystickButton(controller1, 5); 
   private final JoystickButton runMotorButtonRight = new JoystickButton(controller1, 6);
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final Drivetrain drivetrain = new Drivetrain(controller1);
@@ -32,7 +33,10 @@ public class RobotContainer {
   private final MotorMovementCommand motorMovementCommand = new MotorMovementCommand(drivetrain);
   private final MotorMovementCommandRight motorMovementCommandRight = new MotorMovementCommandRight(drivetrain);
   private final DriveWithArcade driveWithArcade = new DriveWithArcade(drivetrain);
-
+  
+  ADXRS450_Gyro gyro = new ADXRS450_Gyro(); //TODO: Implement GYRO
+  
+  
 
 
 
