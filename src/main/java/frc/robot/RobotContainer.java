@@ -8,7 +8,6 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.*;
-//import edu.wpi.first.wpilibj.interfaces.Gyro;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.*;
@@ -30,11 +29,12 @@ public class RobotContainer {
   private final Drivetrain drivetrain = new Drivetrain(controller1);
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
-  private final MotorMovementCommand motorMovementCommand = new MotorMovementCommand(drivetrain);
+  private final MotorMovementCommandLeft motorMovementCommandLeft = new MotorMovementCommandLeft(drivetrain);
   private final MotorMovementCommandRight motorMovementCommandRight = new MotorMovementCommandRight(drivetrain);
   private final DriveWithArcade driveWithArcade = new DriveWithArcade(drivetrain);
   
- // ADXRS450_Gyro gyro = new ADXRS450_Gyro(); //TODO: Implement GYRO
+  
+//TODO: Implement GYRO
   
   
 
@@ -70,8 +70,9 @@ public class RobotContainer {
                                                                  controller1.getX(GenericHID.Hand.kLeft)*-1),
                                                                  drivetrain));
 
-    runMotorButtonLeft.whenHeld(motorMovementCommand, true);
+    runMotorButtonLeft.whenHeld(motorMovementCommandLeft, true);
     runMotorButtonRight.whenHeld(motorMovementCommandRight, true);
+    
     
   }
 

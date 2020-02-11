@@ -7,23 +7,34 @@
 
 package frc.robot.commands;
 
+
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Servo1;
+
 
 public class DriveWithArcade extends CommandBase {
 
   private Drivetrain m_driveTrainSubsystem;
+  //private Servo1 servo1;
+  private Servo tempServo;
+ 
 
   /**
    * Creates a new driveWithArcade.
    */
-  public DriveWithArcade(Drivetrain tempSubsystem) {
+  public DriveWithArcade(Drivetrain tempSubsystem, Servo servo1) {
 
     m_driveTrainSubsystem = tempSubsystem;
+    servo1 = tempServo;
+    
 
     // Use addRequirements() here to declare subsystem dependencies.
 
     addRequirements(tempSubsystem);
+   // addRequirements(tempServo);
+   
   }
 
   // Called when the command is initially scheduled.
@@ -35,6 +46,8 @@ public class DriveWithArcade extends CommandBase {
   @Override
   public void execute() {
     m_driveTrainSubsystem.driveWithArcade();
+    
+
   }
 
   // Called once the command ends or is interrupted.

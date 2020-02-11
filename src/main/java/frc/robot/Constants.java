@@ -21,4 +21,5 @@ public final class Constants {
 	*/
 	   public static final double singleMotorPowerLevelLeft = 1;
 	   public static final double singleMotorPowerLevelRight = -1;
+	   public static final double testServoValue = 0.5;
 }
