@@ -8,7 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.*;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
+//import edu.wpi.first.wpilibj.interfaces.Gyro;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.*;
@@ -34,7 +34,7 @@ public class RobotContainer {
   private final MotorMovementCommandRight motorMovementCommandRight = new MotorMovementCommandRight(drivetrain);
   private final DriveWithArcade driveWithArcade = new DriveWithArcade(drivetrain);
   
-  ADXRS450_Gyro gyro = new ADXRS450_Gyro(); //TODO: Implement GYRO
+ // ADXRS450_Gyro gyro = new ADXRS450_Gyro(); //TODO: Implement GYRO
   
   
 
@@ -66,8 +66,8 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     CommandScheduler.getInstance().schedule(new RunCommand(() -> drivetrain.m_drive.arcadeDrive(
-                                                                 controller1.getY(GenericHID.Hand.kLeft),
-                                                                 controller1.getX(GenericHID.Hand.kLeft)),
+                                                                 controller1.getY(GenericHID.Hand.kLeft)*-1,
+                                                                 controller1.getX(GenericHID.Hand.kLeft)*-1),
                                                                  drivetrain));
 
     runMotorButtonLeft.whenHeld(motorMovementCommand, true);

@@ -62,8 +62,8 @@ public class Drivetrain extends SubsystemBase {
     /*
     *  This is where you would need to set the device ID of the new motor.
     */
-    singleMotor = new Spark(4); //TODO: Set a device ID to this speed controller
-   
+    singleMotor = new Spark(4); 
+    
     //Speed Controller Groups that allow independent motor control for seperate sides
     leftSideGroup = new SpeedControllerGroup(frontLeftMotor, rearLeftMotor);
     rightSideGroup = new SpeedControllerGroup(frontRightMotor, rearRightMotor);
