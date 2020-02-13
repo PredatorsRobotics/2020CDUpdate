@@ -13,11 +13,12 @@ import frc.robot.Constants;
 import edu.wpi.first.wpilibj.Servo;
 
 
+
 public class Servo1 extends SubsystemBase {
   /**
    * Creates a new Servo1.
    */
- Servo newServo = new Servo(1);
+ Servo newServo = new Servo(9);
  
 
 
