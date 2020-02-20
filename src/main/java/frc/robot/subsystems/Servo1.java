@@ -24,7 +24,7 @@ public class Servo1 extends SubsystemBase {
 
 
   public Servo1() {
-    newServo.set(Constants.testServoValue);
+    newServo.setSpeed(Constants.testServoValue);
  
   }
 
